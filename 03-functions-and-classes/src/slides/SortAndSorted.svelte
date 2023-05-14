@@ -66,4 +66,23 @@
       </code>
     </pre>
   </section>
+
+  <section>
+    <h2>정렬 함수의 <code>key</code> 인자</h2>
+
+    <small>
+      정렬 함수는 기본적으로 리스트 자료 내의 원시형 자료를 비교하여 정렬하지만, <br
+      />
+      복합 자료형에서도 특정값을 기준으로 정렬하도록 활용할 수 있습니다.
+    </small>
+
+    <pre class="fragment fade-up">
+      <code data-trim data-noescape data-line-numbers class="language-python">
+        {`
+        리스트: list = [ { "id": 2 }, { "id": 1 }, { "id": 3 } ]
+        print(sorted(리스트, key=lambda v: v["id"]))  # key 사용
+        `}
+      </code>
+    </pre>
+  </section>
 </section>
