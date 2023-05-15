@@ -11,14 +11,16 @@
 </section>
 
 <section>
-  <section class="slide-in fade-out">
+  <section data-auto-animate="">
     <h2><code>def</code> 함수 선언</h2>
+
+    <small> 인자: 함수에 전달하는 값 </small>
 
     <pre>
       <code
         data-trim
         data-noescape
-        data-line-numbers="|1|2|3"
+        data-line-numbers="1|2|3|"
         class="language-python">
         def 함수이름(...인자) -> 반환형:
           # 각종 처리 코드
@@ -26,8 +28,10 @@
       </code>
     </pre>
   </section>
-  <section class="slide-out fade-in">
+  <section data-auto-animate="">
     <h2><code>def</code> 함수 선언</h2>
+
+    <small> 인자: 함수에 전달하는 값 </small>
 
     <div data-markdown>
       {`
@@ -38,7 +42,7 @@
       <code
         data-trim
         data-noescape
-        data-line-numbers="|1|2|3"
+        data-line-numbers="1|2|3|"
         class="language-python">
         def f(x: int) -> int:  # 함수 이름, 인자, 반환형 선언
           결과 = x * x  # 처리 코드
@@ -143,13 +147,13 @@
     <code
       data-trim
       data-noescape
-      data-line-numbers={"|1-2|4-5"}
+      data-line-numbers={"1-2|4|5-7"}
       class="language-python">
       {`
         def f(x: int = 0):
           return x * x
 
-        f()  # 0
+        f()  # 0 (기본값 사용)
         f(0)  # 0
         f(1)  # 1
         f(2)  # 4
@@ -162,14 +166,17 @@
   <section data-auto-animate>
     <h2>함수 가변 인자</h2>
 
-    <small>
-      파이썬에는 <strong>인자</strong>와 <strong>키워드 인자</strong>가
-      있습니다. <br />
-      <strong>print</strong> 함수를 기준으로 보면, <code>...args</code> 부분이
-      <strong>인자</strong>로, <br />
-      <code>sep</code>, <code>end</code>와 같이 특정 키워드를 가지는 부분은
-      <strong>키워드 인자</strong>로 구분됩니다.
-    </small>
+    <div class="flex flex-col gap-4">
+      <small>
+        인자 (arguments, args): 함수에 전달하는 값 <br />
+        키워드 인자 (keyword arguments, kwargs): 키워드를 통해 함수에 전달하는 값
+      </small>
+
+      <small>
+        <code>print</code> 함수 기준 <code>...args</code> 부분은 인자,
+        <code>sep</code>, <code>end</code>는 키워드 인자에 해당합니다.
+      </small>
+    </div>
 
     <pre>
     <code data-trim data-noescape data-line-numbers class="language-python">
@@ -178,16 +185,6 @@
       # sep, end와 같이 키워드를 가지는 인자는 '키워드 인자'
     </code>
   </pre>
-  </section>
-
-  <section data-auto-animate="">
-    <h2>함수 가변 인자</h2>
-
-    <small>
-      <strong>인자</strong>는 영어로 'argument'라고 합니다. <br />
-      때문에 인자와 키워드 인자는 각각 arguments와 keyword arguments <br />
-      축약한 형태로 args, kwargs라는 형태로 사용됩니다.
-    </small>
   </section>
 
   <section data-auto-animate>
