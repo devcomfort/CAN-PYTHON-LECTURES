@@ -5,6 +5,7 @@
   import Additional from "./slides/Additional.svelte";
   import Additional2 from "./slides/Additional2.svelte";
   import SortAndSorted from "./slides/SortAndSorted.svelte";
+  import Classes from "./slides/Classes.svelte";
 </script>
 
 <Intro />
@@ -13,3 +14,4 @@
 <SortAndSorted />
 <Functions />
 <FilterObject />
+<Classes />
