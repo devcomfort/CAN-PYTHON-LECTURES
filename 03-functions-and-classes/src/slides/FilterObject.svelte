@@ -29,7 +29,7 @@
       <code
         data-trim
         data-noescape=""
-        data-line-numbers="|4-5|6-7|8|9"
+        data-line-numbers="1-2|4-9|"
         class="language-python">
         {`
         # 기본 문법
@@ -49,13 +49,13 @@
   <section data-auto-animate>
     <h2><code>filter</code> 객체</h2>
 
-    <strong>예시</strong>
+    <strong>예시 (타입 추가)</strong>
 
     <pre>
       <code
         data-trim
         data-noescape=""
-        data-line-numbers="|4-5|6-7|8|9"
+        data-line-numbers="1-2|4-9|"
         class="language-python">
         {`
         # 기본 문법
