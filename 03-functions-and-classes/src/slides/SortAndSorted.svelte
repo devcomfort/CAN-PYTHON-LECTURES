@@ -85,4 +85,24 @@
       </code>
     </pre>
   </section>
+
+  <section>
+    <h2>반대로 정렬하기 <code>reversed</code></h2>
+
+    <small>
+      <code>reversed</code>, <code>reverse</code> 함수는 <code>sorted</code>,
+      <code>sort</code>와 동일하게 동작하지만, <br />
+      배열을 정렬하는 것이 아닌 뒤짚는 역할을 합니다.
+    </small>
+
+    <pre class="fragment fade-up">
+      <code data-trim data-noescape data-line-numbers class="language-python">
+        {`
+        리스트: list = [ { "id": 2 }, { "id": 1 }, { "id": 3 } ]
+        리스트.reverse()  # 3.11 이상 | 직접적으로 값을 수정하여 배열 뒤집기
+        reversed(리스트)  # reversed는 뒤집은 배열 반환 | 직접적으로 값을 수정하지 않음
+        `}
+      </code>
+    </pre>
+  </section>
 </section>
