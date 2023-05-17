@@ -133,7 +133,7 @@
         class Google:
           price: int  # 시가총액
           child_number: int  # 계열사 수
-          childwren: list  # 계열사 정보
+          children: list  # 계열사 정보
 
           def __init__(self, price, children):
             self.price = price
