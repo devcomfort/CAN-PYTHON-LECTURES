@@ -38,7 +38,7 @@
     <pre>
       <code data-trim data-noescape data-line-numbers class="language-python">
         {`
-        apples: List[Apple] = [
+        apples: list = [
           Apple(10, 10, 10, 2000),
           Apple(15, 10, 10, 2700),
           Apple(12, 15, 17, 3100),
@@ -133,7 +133,7 @@
         class Google:
           price: int  # 시가총액
           child_number: int  # 계열사 수
-          childwren: List[Company]  # 계열사 정보
+          children: list  # 계열사 정보
 
           def __init__(self, price, children):
             self.price = price
