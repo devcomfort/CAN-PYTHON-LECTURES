@@ -1,0 +1,12 @@
+{
+  "name": "CAN",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build": "pnpm run --parallel build"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}
