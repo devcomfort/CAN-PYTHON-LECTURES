@@ -6,6 +6,7 @@ export default defineConfig({
   base: "./",
   plugins: [svelte()],
   build: {
+    emptyOutDir: false,
     outDir: "../../public/03-functions-and-classes",
   },
 });
