@@ -3,6 +3,7 @@ name: Cloudflare Build And Deploy
 on:
   push:
     branches:
+      - monorepo
       - main
 
 permissions:
