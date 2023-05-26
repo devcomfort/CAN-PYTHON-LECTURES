@@ -3,8 +3,7 @@
   "version": "1.0.0",
   "description": "",
   "scripts": {
-    // "build": "pnpm marp --html --allow-local-files -o dist\\00-OT.html 00-OT.html"
-    "build" : "echo done"
+    "build": "echo done"
   },
   "keywords": [],
   "author": "",
