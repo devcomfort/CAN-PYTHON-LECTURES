@@ -52,7 +52,7 @@ jobs:
         uses: nwtgck/actions-netlify@v2.0.0
         with:
           publish-dir: "./public"
-          production-branch: "main"
+          production-branch: "monorepo"
           github-token: ${{ secrets.GITHUB_TOKEN }}
           deploy-message: "Deploy from Github Actions"
           enable-pull-request-comment: false
