@@ -2,8 +2,8 @@ name: Cloudflare Build And Deploy
 
 on:
   push:
-    paths:
-      - "./slides"
+    # paths:
+    #   - "./slides"
     branches:
       - monorepo
 
