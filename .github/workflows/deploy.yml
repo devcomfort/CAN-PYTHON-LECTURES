@@ -34,8 +34,9 @@ jobs:
           version: 8
           run_install: false
 
-      - name: Install Marp
-        run: pnpm i -g @marp-team/marp-cli
+      # NOTE: root package.json에 설치하도록 변경
+      # - name: Install Marp
+      #   run: pnpm i -g @marp-team/marp-cli
 
       - name: Cache node modules
         uses: actions/cache@v3
@@ -55,7 +56,7 @@ jobs:
       - name: Build Marp
         run: |
           marp --html --allow-local-files --bespoke.progress -I ./slides -o ./public
-          find . -type f -name "*.md" -exec mv {} $(dirname {})/index.html \;
+          find . -type f -name "./slides/*.md" -exec bash -c 'mv "\$0" "${0%/*}/index.html"' {} \;
 
       - name: "Deploy to Netlify"
         uses: jsmrcaga/action-netlify-deploy@v2.0.0
