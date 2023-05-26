@@ -32,16 +32,17 @@ jobs:
           version: 8
           run_install: false
 
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      - name: Cache node modules
+        uses: actions/cache@v3
+        id: cache
+        with:
+          path: "node_modules"
+          key: npm-package-${{ hashFiles('**/pnpm-lock.yaml') }}
 
       - name: Install Dependencies
-        # 필요한 종속성을 설치한다.
-        run: |
-          pnpm i
+        # 캐시가 불일치한 경우에만 종속성을 설치한다.
+        if: steps.cache.outputs.cache-hit != true
+        run: pnpm i
 
       - name: Build
         run: pnpm build
