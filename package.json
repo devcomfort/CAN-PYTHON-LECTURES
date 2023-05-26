@@ -4,9 +4,13 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "build": "pnpm run --parallel build"
+    "build": "pnpm run --parallel build",
+    "build:marp": "npm run marp --html --allow-local-files --bespoke.progress -I ./slides -o ./public"
   },
   "keywords": [],
   "author": "",
-  "license": "ISC"
+  "license": "ISC",
+  "dependencies": {
+    "@marp-team/marp-cli": "^2.5.0"
+  }
 }
