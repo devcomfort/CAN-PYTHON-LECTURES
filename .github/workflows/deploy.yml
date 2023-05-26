@@ -34,6 +34,9 @@ jobs:
           version: 8
           run_install: false
 
+      - name: Install Marp
+        run: pnpm i -g @marp-team/marp-cli
+
       - name: Cache node modules
         uses: actions/cache@v3
         id: cache
@@ -46,8 +49,13 @@ jobs:
         if: steps.cache.outputs.cache-hit != true
         run: pnpm i
 
-      - name: Build
+      - name: Build Reveal.js
         run: pnpm build
+
+      - name: Build Marp
+        run: |
+          npm run marp --html --allow-local-files --bespoke.progress -I ./slides ./public/index.html
+          find . -type f -name "*.md" -exec mv {} $(dirname {})/index.html \;
 
       - name: "Deploy to Netlify"
         uses: jsmrcaga/action-netlify-deploy@v2.0.0
