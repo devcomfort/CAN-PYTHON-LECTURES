@@ -54,7 +54,7 @@ jobs:
           NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_DEPLOY_MESSAGE: "Deploy To Netlify from GitHub Actions"
           NETLIFY_DEPLOY_TO_PROD: true
-          build_directory: "."
+          build_directory: "./public"
           deploy_alias: "monorepo"
           install_command: "echo Skipping installing the dependencies"
           build_command: "echo Skipping building the web files"
