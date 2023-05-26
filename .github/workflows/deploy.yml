@@ -4,7 +4,6 @@ on:
   push:
     branches:
       - monorepo
-      - main
 
 permissions:
   contents: write
@@ -52,9 +51,10 @@ jobs:
         uses: jsmrcaga/action-netlify-deploy@v2.0.0
         with:
           NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
-          NETLIFY_SITE_ID: ${{secrets.NETLIFY_SITE_ID}}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
           NETLIFY_DEPLOY_MESSAGE: "Deploy To Netlify from GitHub Actions"
           NETLIFY_DEPLOY_TO_PROD: true
-          build_directory: "public"
+          build_directory: "."
+          deploy_alias: "monorepo"
           install_command: "echo Skipping installing the dependencies"
           build_command: "echo Skipping building the web files"
