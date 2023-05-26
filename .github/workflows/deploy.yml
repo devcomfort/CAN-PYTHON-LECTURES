@@ -55,7 +55,7 @@ jobs:
 
       - name: Build Marp
         run: |
-          marp --html --allow-local-files --bespoke.progress -I ./slides -o ./public
+          pnpm marp --html --allow-local-files --bespoke.progress -I ./slides -o ./public
           find . -type f -name "./slides/*.md" -exec bash -c 'mv "\$0" "${0%/*}/index.html"' {} \;
 
       - name: "Deploy to Netlify"
