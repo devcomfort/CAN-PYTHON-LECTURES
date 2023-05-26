@@ -42,4 +42,6 @@ jobs:
         # 필요한 종속성을 설치한다.
         run: |
           pnpm i
-          pnpm build
+
+      - name: Build
+        run: pnpm build
