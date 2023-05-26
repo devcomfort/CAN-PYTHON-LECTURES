@@ -54,9 +54,10 @@ jobs:
         run: pnpm build
 
       - name: Build Marp
-        run: |
-          pnpm marp --html --allow-local-files --bespoke.progress -I ./slides -o ./public
-          find . -type f -name "./slides/*.md" -exec bash -c 'mv "\$0" "${0%/*}/index.html"' {} \;
+        run: pnpm marp --html --allow-local-files --bespoke.progress -I ./slides -o ./public
+
+      - name: Change Marp files' name
+        run: find . -type f -name "./slides/*.md" -exec bash -c 'mv "\$0" "${0%/*}/index.html"' {} \;
 
       - name: "Deploy to Netlify"
         uses: jsmrcaga/action-netlify-deploy@v2.0.0
