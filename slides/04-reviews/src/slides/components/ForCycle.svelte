@@ -1,9 +1,12 @@
 <script>
   import PythonCode from "../../lib/PythonCode.svelte";
   import RangeImplement from "./RangeImplement.svelte";
+  import EnumerateImplement from "./EnumerateImplement.svelte";
+  import ZipImplement from "./ZipImplement.svelte";
+  import MapImplement from "./MapImplement.svelte";
+  import FilterImplement from "./FilterImplement.svelte";
 </script>
 
-<!-- TODO: enumerate, zip, map, filter 추가 -->
 <section>
   <section>
     <h2>for 순회문</h2>
@@ -67,3 +70,7 @@
 </section>
 
 <RangeImplement />
+<EnumerateImplement />
+<ZipImplement />
+<MapImplement />
+<FilterImplement />

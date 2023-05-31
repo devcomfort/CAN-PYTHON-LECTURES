@@ -4,7 +4,35 @@
 
 <section>
   <section>
-    <h2><code>range</code> 사용 형식</h2>
+    <h2>
+      <code>range</code> 구현체
+    </h2>
+
+    <div class="grid grid-rows-3 text-3xl">
+      <div>
+        <code>end</code>
+        &nbsp; &rarr; &nbsp;
+        <code>[0, 1, ..., end - 1, end]</code>
+      </div>
+      <div class="text-2xl">
+        <code>start</code>, <code>end</code>
+        &nbsp; &rarr; &nbsp;
+        <code>[start, start + 1, ..., end - 1, end]</code>
+      </div>
+      <div class="text-xl">
+        <code>start</code>, <code>end</code>, <code>step</code>
+        &nbsp; &rarr; &nbsp;
+        <code
+          >[start, start + step * 1, start + step * 2, ... end - step * 1, end]</code
+        >
+      </div>
+    </div>
+  </section>
+  <section>
+    <h3>
+      <code>range</code> 사용법
+    </h3>
+
     <div class="grid grid-cols-2">
       <PythonCode>
         {`
