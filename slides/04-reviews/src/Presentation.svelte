@@ -3,7 +3,9 @@
   import FlowControl from "./slides/FlowControl.svelte";
   import Functions from "./slides/Functions.svelte";
   import Intro from "./slides/Intro.svelte";
+  import ListAttachAndDetachUtil from "./slides/ListAttachAndDetachUtil.svelte";
   import PrimitiveTypes from "./slides/PrimitiveTypes.svelte";
+  import PyIo from "./slides/PyIO.svelte";
   import TemplateString from "./slides/TemplateString.svelte";
   import VariableDeclaration from "./slides/VariableDeclaration.svelte";
 </script>
@@ -20,11 +22,11 @@
 <TemplateString />
 <!-- 흐름 제어 -->
 <FlowControl />
+<!-- join, filter  -->
+<ListAttachAndDetachUtil />
 
-<!-- NOTE: FlowControl 내에 range는 선언됨 -->
-<!-- TODO: enumerate, zip, filter, map 제외됨 -->
-<!-- TODO: join, split 제외됨 -->
-<!-- TODO: 입출력 - input, print 파트 제외됨 -->
+<!-- 입출력 함수 - input, print -->
+<PyIo />
 
-<!-- 함수 파트 -->
+<!-- 함수  -->
 <Functions />
