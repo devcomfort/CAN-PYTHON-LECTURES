@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "build": "pnpm run --parallel build",
-    "build:marp": "npm run marp --html --allow-local-files --bespoke.progress -I ./slides -o ./public"
+    "build:marp": "pnpm exec marp --html --allow-local-files --bespoke.progress -I ./slides -o ./public"
   },
   "keywords": [],
   "author": "",
