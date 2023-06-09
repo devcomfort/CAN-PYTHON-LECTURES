@@ -2,8 +2,10 @@ name: Cloudflare Build And Deploy
 
 on:
   push:
+    # paths:
+    #   - "./slides"
     branches:
-      - main
+      - monorepo
 
 permissions:
   contents: write
@@ -32,14 +34,39 @@ jobs:
           version: 8
           run_install: false
 
-      - name: Get pnpm store directory
-        id: pnpm-cache
-        shell: bash
-        run: |
-          echo "STORE_PATH=$(pnpm store path)" >> $GITHUB_OUTPUT
+      # NOTE: root package.json에 설치하도록 변경
+      # - name: Install Marp
+      #   run: pnpm i -g @marp-team/marp-cli
+
+      - name: Cache node modules
+        uses: actions/cache@v3
+        id: cache
+        with:
+          path: "node_modules"
+          key: npm-package-${{ hashFiles('**/pnpm-lock.yaml') }}
 
       - name: Install Dependencies
-        # 필요한 종속성을 설치한다.
-        run: |
-          pnpm i
-          pnpm build
+        # 캐시가 불일치한 경우에만 종속성을 설치한다.
+        if: steps.cache.outputs.cache-hit != true
+        run: pnpm i
+
+      - name: Build Reveal.js
+        run: pnpm build
+
+      - name: Build Marp
+        run: pnpm marp --html --allow-local-files --bespoke.progress -I ./slides -o ./public
+
+      - name: Change Marp files' name
+        run: find . -type f -name "./slides/*.md" -exec bash -c 'mv "\$0" "${0%/*}/index.html"' {} \;
+
+      - name: "Deploy to Netlify"
+        uses: jsmrcaga/action-netlify-deploy@v2.0.0
+        with:
+          NETLIFY_AUTH_TOKEN: ${{ secrets.NETLIFY_AUTH_TOKEN }}
+          NETLIFY_SITE_ID: ${{ secrets.NETLIFY_SITE_ID }}
+          NETLIFY_DEPLOY_MESSAGE: "Deploy To Netlify from GitHub Actions"
+          NETLIFY_DEPLOY_TO_PROD: true
+          build_directory: "./public"
+          deploy_alias: "monorepo"
+          install_command: "echo Skipping installing the dependencies"
+          build_command: "echo Skipping building the web files"

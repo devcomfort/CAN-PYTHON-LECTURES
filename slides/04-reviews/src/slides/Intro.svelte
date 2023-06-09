@@ -32,6 +32,13 @@
   <section>
     <ul>
       <li>
+        템플릿 문자열
+        <ul>
+          <li>f-string</li>
+          <li>%-formatting</li>
+        </ul>
+      </li>
+      <li>
         흐름 제어
         <ul>
           <li>조건 제어 - if-elif-else</li>
