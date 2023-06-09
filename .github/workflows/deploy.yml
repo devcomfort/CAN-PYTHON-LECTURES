@@ -48,7 +48,9 @@ jobs:
       - name: Install Dependencies
         # 캐시가 불일치한 경우에만 종속성을 설치한다.
         if: steps.cache.outputs.cache-hit != true
-        run: pnpm i
+        run: |
+          pnpm i
+          pnpm i -g netlify-cli
 
       - name: Build Reveal.js
         run: pnpm build

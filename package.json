@@ -9,9 +9,7 @@
   },
   "keywords": [],
   "author": "",
-  "license": "ISC",
   "dependencies": {
-    "@marp-team/marp-cli": "^2.5.0",
-    "netlify-cli": "^15.4.1"
+    "@marp-team/marp-cli": "^2.5.0"
   }
 }
